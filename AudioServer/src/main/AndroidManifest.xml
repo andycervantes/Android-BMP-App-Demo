@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ptc.hw6">
+
+    <!--this shit should be the same as the service java file declared in the code-->
+    <permission android:name="ptc.hw6.AudioServer.ServiceServer.TEST"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--<activity android:name="ptc.hw6.MainActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <service
+            android:name=".ServiceServer"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="ptc.hw6.AudioServer.TEST"
+            android:process=":AudioServer">
+            <intent-filter>
+                <!--must have the stub name in it...???-->
+                <action android:name="ptc.hw6.AudioServer.AudioService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
